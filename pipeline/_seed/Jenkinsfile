@@ -21,7 +21,7 @@ pipeline {
 
         stage('process'){
             steps {
-                jobDsl targets: ['jobsDsl/jobs.groovy'].join('\n'),
+                jobDsl  targets: ['jobsDsl/job.groovy'].join('\n'),
                         removedJobAction: 'DELETE',
                         removedViewAction: 'DELETE',
                         lookupStrategy: 'SEED_JOB'

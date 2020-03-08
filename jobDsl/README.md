@@ -6,8 +6,6 @@ For additonal information check out the [Wiki](https://github.com/jenkinsci/job-
 
 ## Getting Started
 
-+ Link to other wiki pages here
-
 + Jenkins Job DSL API -
 <https://jenkinsci.github.io/job-dsl-plugin/>
 

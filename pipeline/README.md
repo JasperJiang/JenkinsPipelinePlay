@@ -1,39 +1,16 @@
 # PipeLine
 
-## Hello Word Sample
+Jenkins Pipeline (or simply "Pipeline" with a capital "P") is a suite of plugins which supports implementing and integrating continuous delivery pipelines into Jenkins.
 
-```text
-Jenkinsfile (Declarative Pipeline)
-pipeline {
-    agent { docker 'maven:3.3.3' }
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
-    }
-}
-```
+Document - <https://jenkins.io/doc/book/pipeline/>
+
+## Getting Started
+
++ Pipeline Syntax Document - <https://jenkins.io/doc/book/pipeline/syntax/>
 
 ## Agent
 
-[Agent Syntax Document](https://jenkins.io/doc/book/pipeline/syntax/#agent)  
-
-### Agents Level
-
-* Top Level Agents
-* Stage Agents
-
-### Agents Types
-
-* any
-* none
-* label
-* node
-* docker
-* dockerfile
-* kubernetes
++ Agent Syntax Document - <https://jenkins.io/doc/book/pipeline/syntax/#agent>
 
 ## Config Pipeline Job SCM
 
