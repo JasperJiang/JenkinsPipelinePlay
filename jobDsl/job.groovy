@@ -1,4 +1,4 @@
-job('DSL-Test') {
+job('DSL/DSL-Test') {
     scm {
         git('git://github.com/quidryan/aws-sdk-test.git')
     }
