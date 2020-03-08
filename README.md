@@ -20,4 +20,5 @@ docker run -d -p 8080:8080 -p 50000:50000 -v /Users/jjiang153/Documents/Playgrou
 
 ## Table of contents
 
-* [Pipeline&Job-DSL](pipeline/README.md)
+* [Pipeline](pipeline/README.md)
+* [Job-DSL](jobDsl/README.md)
