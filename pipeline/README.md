@@ -8,6 +8,8 @@ Document - <https://jenkins.io/doc/book/pipeline/>
 
 + Pipeline Syntax Document - <https://jenkins.io/doc/book/pipeline/syntax/>
 
++ Pipeline Steps Reference - <https://jenkins.io/doc/pipeline/steps/>
+
 ## Agent
 
 + Agent Syntax Document - <https://jenkins.io/doc/book/pipeline/syntax/#agent>
