@@ -1,6 +1,11 @@
-job('DSL/DSL-Test') {
+folder('DSLTEST') {
+    displayName('DSLTEST DisplayName')
+    description('Folder for DSLTEST')
+}
+
+job('DSLTEST/Job1') {
     scm {
-        git('git://github.com/quidryan/aws-sdk-test.git')
+        git('https://github.com/JasperJiang/JenkinsPlay')
     }
     triggers {
         scm('H/15 * * * *')
