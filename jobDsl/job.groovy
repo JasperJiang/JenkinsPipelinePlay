@@ -14,3 +14,16 @@ job('DSLTEST/Job1') {
         maven('-e clean test')
     }
 }
+
+buildPipelineView("DSLTEST/pipeline") {
+    filterBuildQueue()
+    filterExecutors()
+    title(component.name)
+    displayedBuilds(10)
+    selectedJob("DSLTEST/Job1")
+    alwaysAllowManualTrigger()
+    showPipelineParameters(true)
+    showPipelineDefinitionHeader(false)
+    showPipelineParametersInHeaders(true)
+    refreshFrequency(5)
+}

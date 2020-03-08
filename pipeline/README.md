@@ -10,6 +10,10 @@ Document - <https://jenkins.io/doc/book/pipeline/>
 
 + Pipeline Steps Reference - <https://jenkins.io/doc/pipeline/steps/>
 
+## Jenkins Plugin
+
++ pipeline
+
 ## Agent
 
 + Agent Syntax Document - <https://jenkins.io/doc/book/pipeline/syntax/#agent>
