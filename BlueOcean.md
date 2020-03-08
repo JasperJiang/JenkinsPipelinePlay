@@ -1,4 +1,5 @@
 # What is Blue Ocean
+
 Blue Ocean rethinks the Jenkins user experience. Designed from the ground up for Jenkins Pipeline and compatible with Freestyle jobs, Blue Ocean reduces clutter and increases clarity for every member of your team through the following key features:
 
 * Sophisticated visualizations of CD pipelines for fast and intuitive comprehension of software pipeline status.

@@ -1,6 +1,10 @@
+# PipeLine
+
 [Jenkins PipeLine 文档](https://jenkins.io/doc/book/pipeline/)
-# Hello Word Sample
-```
+
+## Hello Word Sample
+
+```text
 Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent { docker 'maven:3.3.3' }
@@ -14,14 +18,17 @@ pipeline {
 }
 ```
 
-# Agent
+## Agent
+
 [Agent Syntax Document](https://jenkins.io/doc/book/pipeline/syntax/#agent)  
 
-## Agents Level
+### Agents Level
+
 * Top Level Agents
 * Stage Agents
 
-## Agents Types
+### Agents Types
+
 * any
 * none
 * label
@@ -30,5 +37,6 @@ pipeline {
 * dockerfile
 * kubernetes
 
-# Config Pipeline Job SCM
+## Config Pipeline Job SCM
+
 ![Job Config](imgs/SeedSettings.png)
