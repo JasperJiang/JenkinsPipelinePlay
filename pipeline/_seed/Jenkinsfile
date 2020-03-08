@@ -14,7 +14,7 @@ pipeline {
 
         stage('init'){
             steps {
-                sh('find ./repos -name "ci.yaml" > components.out')
+                sh('find ./repos -name "ci.yaml" > repos.out')
                 sh('cat repos.out')
             }
         }
