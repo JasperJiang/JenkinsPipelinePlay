@@ -18,5 +18,14 @@ pipeline {
                 sh('cat repos.out')
             }
         }
+
+        stage('process'){
+            steps {
+                jobDsl targets: ['jobsDsl/jobs.groovy'].join('\n'),
+                        removedJobAction: 'DELETE',
+                        removedViewAction: 'DELETE',
+                        lookupStrategy: 'SEED_JOB'
+            }
+        }
     }
 }
