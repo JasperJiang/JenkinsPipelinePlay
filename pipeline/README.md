@@ -29,3 +29,6 @@ pipeline {
 * docker
 * dockerfile
 * kubernetes
+
+# Config Pipeline Job SCM
+![Job Config](imgs/SeedSettings.png)
