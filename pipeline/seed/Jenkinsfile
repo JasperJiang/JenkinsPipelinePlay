@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('clone git'){
+            steps {
+                sh 'mkdir -p repos/jenkins-play'
+                dir("repos/jenkins-play") {
+                    git branch: "master",
+                            credentialsId: "github-token",
+                            url: 'https://github.com/JasperJiang/JenkinsPlay'
+                }
+            }
+        }
+
+        stage('init'){
+            steps {
+                sh('find ./repos -name "ci.yaml" > components.out')
+                sh('cat repos.out')
+            }
+        }
+    }
+}
