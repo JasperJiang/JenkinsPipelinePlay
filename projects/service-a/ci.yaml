@@ -1,4 +1,0 @@
-image: default
-name: 'service-a'
-serviceOverrides: false
-type: 'kubernetes'

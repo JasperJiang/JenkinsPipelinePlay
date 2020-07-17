@@ -18,10 +18,21 @@ pipeline {
             }
         }
 
+        stage('clone git'){
+            steps {
+                sh 'mkdir -p repos/services'
+                dir("repos/services/service_a") {
+                    git branch: "master",
+                            credentialsId: "github-token",
+                            url: 'https://github.com/JasperJiang/Service_A'
+                }
+            }
+        }
+
         stage('init'){
             steps {
-                sh('find . -path "*/fixture/*" -prune -o -name "ci-repo.yaml" -print > repos.out')
-                sh('find . -path "*/fixture/*" -prune -o -name "ci.yaml" -print > components.out')
+                sh('find repos/services -prune -o -name "ci-repo.yaml" -print > repos.out')
+                sh('find repos/services -prune -o -name "ci.yaml" -print > components.out')
 
                 sh('cat repos.out')
                 sh('cat components.out')
