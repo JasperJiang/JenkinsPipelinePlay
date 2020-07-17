@@ -98,7 +98,7 @@ class PrUTJob {
                     triggerPhrase('test please')
                     whiteListTargetBranches([repo.trunkBranch])
                     extensions {
-//                        commitStatus {
+                        commitStatus {
 //                            context('unit-tests')
                             triggeredStatus('About to perform validation of this pull request...')
                             startedStatus('Performing validation of this pull request...')
