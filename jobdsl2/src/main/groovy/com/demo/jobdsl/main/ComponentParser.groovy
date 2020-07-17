@@ -5,7 +5,9 @@ import com.demo.jobdsl.main.domain.Repository
 import javaposse.jobdsl.dsl.DslFactory
 import org.yaml.snakeyaml.Yaml
 
+
 class ComponentParser{
+
     List<Repository> parse(DslFactory fileReader) {
         def deployTimeout = '240s'
 
@@ -78,9 +80,6 @@ class ComponentParser{
                 }
             }
         }
-
-        printf Arrays.toString(reposMetadata.toArray())
-
     }
 
 }
