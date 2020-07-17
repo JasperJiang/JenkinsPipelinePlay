@@ -21,14 +21,17 @@ pipeline {
         stage('init'){
             steps {
                 sh('find ./repos -name "ci.yaml" > repos.out')
+                sh('find . -path "*/fixture/*" -prune -o -name "ci.yaml" -print > components.out')
+
                 sh('cat repos.out')
+                sh('cat components.out')
             }
         }
 
         stage('process'){
             steps {
                 jobDsl  targets: ['jobdsl2/src/jobs/jobs.groovy'].join('\n'),
-                        // additionalClasspath: 'jobdsl2/build/libs/jobdsl2.jar',
+                        additionalClasspath: 'jobdsl2/build/libs/jobdsl2.jar',
                         removedJobAction: 'DELETE',
                         removedViewAction: 'DELETE',
                         lookupStrategy: 'SEED_JOB'
