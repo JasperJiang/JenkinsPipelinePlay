@@ -31,8 +31,8 @@ pipeline {
 
         stage('init'){
             steps {
-                sh('find repos/services -prune -o -name "ci-repo.yaml" -print > repos.out')
-                sh('find repos/services -prune -o -name "ci.yaml" -print > components.out')
+                sh('find repos/services -name "ci-repo.yaml" -print > repos.out')
+                sh('find repos/services -name "ci.yaml" -print > components.out')
 
                 sh('cat repos.out')
                 sh('cat components.out')
