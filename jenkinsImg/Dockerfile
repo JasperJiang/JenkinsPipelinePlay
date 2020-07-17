@@ -1,6 +1,7 @@
 FROM jenkins/jenkins:lts
 
 USER root
+
 RUN apt-get update -qq \
     && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2 software-properties-common
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
@@ -12,3 +13,13 @@ RUN apt-get update  -qq \
     && apt-get install docker-ce=17.12.1~ce-0~debian -y
 
 RUN usermod -aG docker jenkins
+
+
+ENV MAVEN_VERSION 3.6.0
+
+RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
+  && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
+  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+
+ENV MAVEN_HOME /usr/share/maven
+
