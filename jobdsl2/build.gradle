@@ -1,0 +1,21 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+group 'com.demo.jobdsl'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'http://repo.jenkins-ci.org/releases/' }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile "org.jenkins-ci.plugins:job-dsl-core:${jobDslVersion}"
+    compile 'org.kohsuke:github-api:1.93'
+    compile 'org.yaml:snakeyaml:1.17'
+}
