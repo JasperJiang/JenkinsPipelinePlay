@@ -4,8 +4,8 @@ import com.demo.jobdsl.main.domain.Repository
 
 class PrUTJob {
 
-    void build(def context, Repository repo){
-        ctx.job('utils/pr-hook-unit-tests-' + repo.name){
+    void build(context, Repository repo){
+        context.job('utils/pr-hook-unit-tests-' + repo.name){
 
             concurrentBuild()
 
