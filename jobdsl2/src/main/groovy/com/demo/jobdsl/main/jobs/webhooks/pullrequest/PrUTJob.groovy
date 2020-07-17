@@ -4,8 +4,8 @@ import com.demo.jobdsl.main.domain.Repository
 
 class PrUTJob {
 
-    void build(context, Repository repo){
-        context.job('utils/pr-hook-unit-tests-' + repo.name){
+    void build(ctx, Repository repo){
+        ctx.job('utils/pr-hook-unit-tests-' + repo.name){
 
             concurrentBuild()
 
@@ -99,7 +99,7 @@ class PrUTJob {
                     whiteListTargetBranches([repo.trunkBranch])
                     extensions {
                         commitStatus {
-//                            context('unit-tests')
+                            context('unit-tests')
                             triggeredStatus('About to perform validation of this pull request...')
                             startedStatus('Performing validation of this pull request...')
                             completedStatus('SUCCESS', 'Unit tests passed.')
