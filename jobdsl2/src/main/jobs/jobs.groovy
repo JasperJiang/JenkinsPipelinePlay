@@ -10,5 +10,5 @@ List<Repository> reposMetadata = new ComponentParser().parse(dslFactory)
 
 reposMetadata.each {repo ->
     new UtilsFolder().build(delegate)
-    new PrUTJob().build(delegate)
+    new PrUTJob().build(delegate, repo)
 }
