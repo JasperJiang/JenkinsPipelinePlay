@@ -39,11 +39,13 @@ class PrUTJob {
             if (repo.components.size == 1) {
                 steps {
                     conditionalSteps {
-                        stringsMatch('${sha1}', '${ghprbActualCommit}', false)
-                    }
-                    steps {
-                        shell('echo "Check could not be run, please check for possible merge conflicts." > consoleTextTail.log')
-                        shell('exit 1')
+                        condition {
+                            stringsMatch('${sha1}', '${ghprbActualCommit}', false)
+                        }
+                        steps {
+                            shell('echo "Check could not be run, please check for possible merge conflicts." > consoleTextTail.log')
+                            shell('exit 1')
+                        }
                     }
                     repo.components.each { component ->
                         // Run custom checks using make target ci-pr
@@ -57,11 +59,13 @@ class PrUTJob {
             }else{
                 steps{
                     conditionalSteps {
-                        stringsMatch('${sha1}', '${ghprbActualCommit}', false)
-                    }
-                    steps {
-                        shell('echo "Check could not be run, please check for possible merge conflicts." > consoleTextTail.log')
-                        shell('exit 1')
+                        condition {
+                            stringsMatch('${sha1}', '${ghprbActualCommit}', false)
+                        }
+                        steps {
+                            shell('echo "Check could not be run, please check for possible merge conflicts." > consoleTextTail.log')
+                            shell('exit 1')
+                        }
                     }
 
                     repo.components.each { component ->
