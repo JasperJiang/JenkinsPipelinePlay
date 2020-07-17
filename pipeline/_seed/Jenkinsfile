@@ -18,7 +18,7 @@ pipeline {
             }
         }
 
-        stage('clone git'){
+        stage('clone service a'){
             steps {
                 sh 'mkdir -p repos/services'
                 dir("repos/services/service_a") {
