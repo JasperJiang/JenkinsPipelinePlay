@@ -8,20 +8,11 @@ import org.yaml.snakeyaml.Yaml
 
 class ComponentParser{
 
-    List<Repository> parse(DslFactory fileReader) {
+    List<Repository> parse(fileReader) {
         def deployTimeout = '240s'
 
         def repos = fileReader.readFileFromWorkspace("repos.out").split('\n')
         List<Repository> reposMetadata = new ArrayList<>()
-
-        def config = new HashMap()
-        def bindings = getBinding()
-
-        config.putAll(bindings.getVariables())
-
-        def out = config['out']
-
-        out.println("12323432423")
 
         repos.each { repo ->
             Yaml parser = new Yaml()
@@ -60,10 +51,13 @@ class ComponentParser{
                     }
 
                     List<Map> componentList = []
-
-                    map.names.each { name ->
-                        componentList.add(new HashMap<>(map))
-                        componentList.get(componentList.size() - 1).name = name
+                    if (map.containsKey("names")) {
+                        map.names.each { name ->
+                            componentList.add(new HashMap<>(map))
+                            componentList.get(componentList.size() - 1).name = name
+                        }
+                    }else {
+                        componentList.add(map)
                     }
 
                     componentList.each { c ->
