@@ -20,7 +20,7 @@ pipeline {
 
         stage('init'){
             steps {
-                sh('find ./repos -name "ci.yaml" > repos.out')
+                sh('find . -path "*/fixture/*" -prune -o -name "ci-repo.yaml" -print > repos.out')
                 sh('find . -path "*/fixture/*" -prune -o -name "ci.yaml" -print > components.out')
 
                 sh('cat repos.out')
