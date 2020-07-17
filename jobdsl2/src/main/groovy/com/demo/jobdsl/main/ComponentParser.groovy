@@ -39,6 +39,8 @@ class ComponentParser{
 
         def components = fileReader.readFileFromWorkspace("components.out").split('\n')
 
+        println('213213123')
+
         reposMetadata.each {repo ->
             components.each { component ->
                 if (component.contains(repo.path)){
