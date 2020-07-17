@@ -17,6 +17,8 @@ dependencies {
     compile "org.jenkins-ci.plugins:job-dsl-core:${jobDslVersion}"
     compile 'org.kohsuke:github-api:1.93'
     compile 'org.yaml:snakeyaml:1.17'
+    testCompile "org.jenkins-ci.plugins:job-dsl:${jobDslVersion}"
+
 }
 
 jar {
