@@ -14,7 +14,7 @@ pipeline {
 
         stage('build') {
             steps {
-                sh('jobdsl2/gradlew -p jobdsl2 build jar --debug')
+                sh('jobdsl2/gradlew -p jobdsl2 clean build jar --debug')
             }
         }
 
