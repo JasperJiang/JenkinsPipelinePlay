@@ -9,9 +9,9 @@ class PrUTJob {
 
             concurrentBuild()
 
-            if (repo.components.size == 1){
-                label(repo.components[0].image)
-            }
+//            if (repo.components.size == 1){
+//                label(repo.components[0].image)
+//            }
 
             scm{
                 git{
