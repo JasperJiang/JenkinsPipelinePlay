@@ -107,7 +107,7 @@ class PrUTJob {
                             completedStatus('PENDING', 'Unit tests in progress...')
                             completedStatus('ERROR', 'There was an error while running unit tests.')
                             addTestResults(true)
-//                        }
+                        }
                         buildStatus {
                             completedStatus('SUCCESS', 'Unit tests passed, go have a cup of coffee...')
                             completedStatus('FAILURE', 'Unit tests are failing, for more info, please see below...')
