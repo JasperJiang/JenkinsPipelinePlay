@@ -80,9 +80,6 @@ class ComponentParser{
                 }
             }
         }
-
-        printf Arrays.toString(reposMetadata.toArray())
-
     }
 
 }
