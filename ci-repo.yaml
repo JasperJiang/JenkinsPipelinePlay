@@ -1,0 +1,8 @@
+name: 'jenkins-play'
+trunkBranch: 'master'
+gitCredentialsId: 'github-token'
+gitRepositoryOwner: 'JasperJiang/JenkinsPlay'
+gitRepositorySchema: 'https'
+gitRepositoryHost: 'github.com'
+dockerRegistry: ''
+dockerRegistryCredentialsId: ''
