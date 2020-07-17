@@ -14,6 +14,14 @@ class ComponentParser{
         def repos = fileReader.readFileFromWorkspace("repos.out").split('\n')
         List<Repository> reposMetadata = new ArrayList<>()
 
+        def config = new HashMap()
+        def bindings = getBinding()
+
+        config.putAll(bindings.getVariables())
+
+        def out = config['out']
+
+        out.println("12323432423")
 
         repos.each { repo ->
             Yaml parser = new Yaml()
@@ -38,8 +46,6 @@ class ComponentParser{
         }
 
         def components = fileReader.readFileFromWorkspace("components.out").split('\n')
-
-        println('213213123')
 
         reposMetadata.each {repo ->
             components.each { component ->
