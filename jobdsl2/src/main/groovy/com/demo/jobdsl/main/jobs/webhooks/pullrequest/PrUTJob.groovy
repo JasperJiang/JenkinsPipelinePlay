@@ -91,6 +91,38 @@ class PrUTJob {
                 }
             }
 
+            triggers {
+                githubPullRequest {
+                    useGitHubHooks()
+                    permitAll()
+                    triggerPhrase('test please')
+                    whiteListTargetBranches([repo.trunkBranch])
+                    extensions {
+                        commitStatus {
+                            context('unit-tests')
+                            triggeredStatus('About to perform validation of this pull request...')
+                            startedStatus('Performing validation of this pull request...')
+                            completedStatus('SUCCESS', 'Unit tests passed.')
+                            completedStatus('FAILURE', 'Unit tests are failing.')
+                            completedStatus('PENDING', 'Unit tests in progress...')
+                            completedStatus('ERROR', 'There was an error while running unit tests.')
+                            addTestResults(true)
+                        }
+                        buildStatus {
+                            completedStatus('SUCCESS', 'Unit tests passed, go have a cup of coffee...')
+                            completedStatus('FAILURE', 'Unit tests are failing, for more info, please see below...')
+                            completedStatus('ERROR', 'There was an error while running unit tests.')
+                        }
+                    }
+                }
+            }
+
+            configure { project ->
+                project / 'triggers' / 'org.jenkinsci.plugins.ghprb.GhprbTrigger' / 'extensions' << 'org.jenkinsci.plugins.ghprb.extensions.comments.GhprbCommentFile' {
+                    commentFilePath 'consoleTextTail.log'
+                }
+            }
+
         }
     }
 }
