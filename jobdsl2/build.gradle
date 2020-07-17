@@ -5,6 +5,17 @@ plugins {
 
 group 'com.demo.jobdsl'
 
+sourceSets {
+    jobs {
+        groovy {
+            srcDirs 'src/jobs'
+            compileClasspath += main.compileClasspath
+        }
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
 repositories {
     mavenCentral()
     maven { url 'http://repo.jenkins-ci.org/releases/' }
