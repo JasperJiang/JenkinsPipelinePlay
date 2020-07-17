@@ -18,3 +18,9 @@ dependencies {
     compile 'org.kohsuke:github-api:1.93'
     compile 'org.yaml:snakeyaml:1.17'
 }
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
